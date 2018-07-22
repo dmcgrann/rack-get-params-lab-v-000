@@ -29,11 +29,11 @@ class Application
     
     req.path.match(/add/)
  
-    add_item = req.params["items"]
+    add_item = req.params["item"]
  
-    if @@items.include?(add_item)
-      @@cart << add_item
-      resp.write "added #{add_item}\n"
+    if @@items.include?(item)
+      @@cart << item
+      resp.write "added #{item}\n"
     else
       resp.write "We dont have that item"
     end
