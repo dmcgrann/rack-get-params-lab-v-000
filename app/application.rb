@@ -34,7 +34,7 @@ class Application
       if @@items.include?(add_item)
         resp.write "added #{add_item}"
       else
-        resp.write "Couldn't find #{add_item}"
+        resp.write "we dont have that #{add_item}"
       end
     
     resp.finish
