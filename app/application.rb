@@ -32,7 +32,7 @@ class Application
       add_item = req.params["items"]
  
       if @@items.include?(add_item)
-        resp.write "#{add_item}"
+        resp.write "Added #{add_item}"
       else
         resp.write "Couldn't find #{add_item}"
       end
