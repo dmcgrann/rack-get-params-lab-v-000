@@ -22,7 +22,7 @@ class Application
       @@cart.map do |c|
         resp.write "#{c}\n"
       end
-    else
+    elsif @@cart = []
       resp.write "Your cart is empty."
     end
     resp.finish
