@@ -14,11 +14,8 @@ class Application
     elsif req.path.match(/search/)
       search_term = req.params["q"]
       resp.write handle_search(search_term)
-    else
-      resp.write "Path Not Found"
-    end
     
-    req.path.match(/cart/)
+    elsif req.path.match(/cart/)
     if @@cart != []
       @@cart.map do |c|
         resp.write "#{c}\n"
@@ -27,17 +24,21 @@ class Application
       resp.write "Your cart is empty."
     end
     
-  # req.path.match(/add/)
+  elsif req.path.match(/add/)
  
-  #   add_item = req.params["item"]
+    add_item = req.params["item"]
  
-  #   if @@items.include?(item)
-  #     @@cart << item
-  #     resp.write "added #{item}\n"
-  #   else
-  #     resp.write "We dont have that item"
-    # end 
+    if @@items.include?(item)
+      @@cart << item
+      resp.write "added #{item}\n"
+    else
+      resp.write "We dont have that item"
+    end 
     
+  else
+      resp.write "Path Not Found"
+    end
+      
     resp.finish
   end
 
