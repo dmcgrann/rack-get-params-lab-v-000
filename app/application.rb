@@ -22,6 +22,8 @@ class Application
       @@cart.map do |c|
         resp.write "#{c}\n"
       end
+    else
+      resp.write "Your cart is empty."
     
     resp.finish
   end
