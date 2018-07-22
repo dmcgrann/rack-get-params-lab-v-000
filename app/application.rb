@@ -19,7 +19,7 @@ class Application
     end
     
     req.path.match(/cart/)
-    if cart != []
+    if @@cart != []
       @@cart.map do |c|
         resp.write "#{c}\n"
       end
