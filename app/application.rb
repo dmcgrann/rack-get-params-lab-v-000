@@ -16,7 +16,7 @@ class Application
       resp.write handle_search(search_term)
     elsif req.path.match(/cart/)
       @@cart.collect do |c|
-        resp.write "#{ }\n"
+        resp.write "#{c}\n"
       end
     else
       resp.write "Path Not Found"
